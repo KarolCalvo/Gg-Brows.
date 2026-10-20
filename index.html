@@ -86,6 +86,9 @@
                     <li>
                         <strong>Microblading & Nano Brows</strong>
                         Diseño hiperrealista de cejas.
+                        <div class="servicio-img">
+                            <img src="img/Microblading.webp" alt="Microblading & Nano Brows" loading="lazy">
+                        </div>
                     </li>
                     <li>
                         <strong>Plasma Fibroblast</strong>
@@ -103,42 +106,60 @@
                 <h2>Agendar Cita</h2>
                 <p>Completa tus datos para solicitar una cita o resolver tus dudas:</p>
 
-                <!-- Mensaje visual de confirmación (Oculto por defecto) -->
-                <div id="mensajeExito" class="mensaje-exito" style="display: none;">
+                <!-- Mensaje visual de confirmación con aria-live para accesibilidad -->
+                <div id="mensajeExito" class="mensaje-exito" style="display: none;" aria-live="polite">
                     ¡Muchas gracias! Tu solicitud de cita ha sido recibida. Nos pondremos en contacto contigo muy pronto.
                 </div>
 
-                <!-- Formulario procesado por JavaScript para evitar HTTP 405 -->
-                <form id="formCita" class="form-cita">
+                <!-- Formulario con novalidate para activar la validación personalizada de JS -->
+                <form id="formCita" class="form-cita" novalidate>
+                    
+                    <!-- Campo Nombre -->
                     <div class="form-grupo">
                         <label for="nombre">Nombre Completo</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Ej. María López" required>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej. María López" required minlength="3" maxlength="80" aria-describedby="error-nombre">
+                        <small id="error-nombre" class="error" aria-live="polite"></small>
                     </div>
 
+                    <!-- Campo Correo Electrónico (Requisito estricto de la chuleta) -->
+                    <div class="form-grupo">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" placeholder="Ej. maria@ejemplo.com" required maxlength="254" aria-describedby="error-email">
+                        <small id="error-email" class="error" aria-live="polite"></small>
+                    </div>
+
+                    <!-- Campo Teléfono -->
                     <div class="form-grupo">
                         <label for="telefono">Teléfono / WhatsApp</label>
-                        <input type="tel" id="telefono" name="telefono" placeholder="+506 8888-8888" required>
+                        <input type="tel" id="telefono" name="telefono" placeholder="+506 8888-8888" required aria-describedby="error-telefono">
+                        <small id="error-telefono" class="error" aria-live="polite"></small>
                     </div>
 
+                    <!-- Campo Servicio -->
                     <div class="form-grupo">
                         <label for="servicio">Servicio de Interés</label>
-                        <select id="servicio" name="servicio" required>
+                        <select id="servicio" name="servicio" required aria-describedby="error-servicio">
                             <option value="" disabled selected>Selecciona un servicio</option>
                             <option value="microblading">Microblading & Nano Brows</option>
                             <option value="plasma">Plasma Fibroblast</option>
                             <option value="skin-tag">Skin Tag Removal</option>
                             <option value="consulta">Consulta General</option>
                         </select>
+                        <small id="error-servicio" class="error" aria-live="polite"></small>
                     </div>
 
+                    <!-- Campo Fecha -->
                     <div class="form-grupo">
                         <label for="fecha">Fecha Preferida</label>
-                        <input type="date" id="fecha" name="fecha" required>
+                        <input type="date" id="fecha" name="fecha" required aria-describedby="error-fecha">
+                        <small id="error-fecha" class="error" aria-live="polite"></small>
                     </div>
 
+                    <!-- Campo Mensaje -->
                     <div class="form-grupo">
                         <label for="mensaje">Mensaje o Nota adicional</label>
-                        <textarea id="mensaje" name="mensaje" rows="3" placeholder="¿Tienes alguna preferencia de horario o pregunta?"></textarea>
+                        <textarea id="mensaje" name="mensaje" rows="3" placeholder="¿Tienes alguna preferencia de horario o pregunta?" required minlength="10" maxlength="1000" aria-describedby="error-mensaje"></textarea>
+                        <small id="error-mensaje" class="error" aria-live="polite"></small>
                     </div>
 
                     <button type="submit" class="btn-enviar">Solicitar Cita</button>
