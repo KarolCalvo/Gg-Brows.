@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==============================
 
     const contactForm = document.getElementById("contactForm");
-    const numeroWhatsApp = "506XXXXXXXX"; // Reemplaza con tu número real
+    const numeroWhatsApp = "50687893505"; // Número real configurado
 
     if (contactForm) {
         contactForm.addEventListener("submit", (evento) => {
