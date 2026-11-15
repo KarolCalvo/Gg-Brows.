@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,641 +6,539 @@
 
     <title>GG Browns | Micropigmentación y Estética Avanzada</title>
 
-    <meta name="description" content="GG Browns: servicios de Microblading, Nano Brows, Lip Blush, Plasma Fibroblast y Skin Tag Removal. Resalta tu belleza natural.">
+    <meta name="description" content="GG Browns Beauty Studio. Microblading, Nano Brows, Lip Blush, Plasma Fibroblast y tratamientos estéticos para resaltar tu belleza natural.">
 
     <meta name="theme-color" content="#FBF0EE">
 
+    <!-- Optimización de fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="estilos.css">
+
+    <!-- Favicon -->
     <link rel="icon" href="Favicon.svg" type="image/svg+xml">
 
+    <!-- JavaScript -->
     <script src="script.js" defer></script>
 </head>
 
 <body>
 
-    <!-- ENCABEZADO -->
-    <header class="header">
-        <div class="container header-container">
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-            <a href="#inicio" class="logo" aria-label="GG Browns, ir al inicio">
-                <img src="img/logo.webp" alt="Logo de GG Browns">
-            </a>
+<!-- ENCABEZADO -->
+<header class="header">
+    <div class="container header-container">
 
-            <button
-                type="button"
-                class="menu-toggle"
-                id="menuToggle"
-                aria-label="Abrir menú"
-                aria-controls="mainNav"
-                aria-expanded="false">
-                <span aria-hidden="true">☰</span>
-            </button>
+        <a href="#inicio" class="logo" aria-label="GG Browns, inicio">
+            <img
+                src="img/logo.webp"
+                alt="GG Browns Beauty Studio"
+                width="150"
+                height="100"
+                decoding="async">
+        </a>
 
-            <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
-                <a href="#inicio">Inicio</a>
-                <a href="#nosotros">Nosotros</a>
-                <a href="#servicios">Servicios</a>
-                <a href="#galeria">Galería</a>
-                <a href="#opiniones">Opiniones</a>
-                <a href="#contacto">Contacto</a>
-            </nav>
+        <button
+            type="button"
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Abrir menú"
+            aria-controls="mainNav"
+            aria-expanded="false">
+            <span aria-hidden="true">☰</span>
+        </button>
 
-        </div>
-    </header>
+        <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+            <a href="#inicio">Inicio</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#galeria">Galería</a>
+            <a href="#opiniones">Opiniones</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
 
-    <!-- INICIO / HERO -->
-    <main>
+    </div>
+</header>
 
-        <section id="inicio" class="hero" aria-labelledby="titulo-principal">
+<main id="contenido" tabindex="-1">
 
-            <picture>
-                <source
-                    media="(max-width: 600px)"
-                    srcset="img/hero_mobile.webp">
+    <!-- PORTADA -->
+    <section id="inicio" class="hero" aria-labelledby="titulo-principal">
 
-                <source
-                    media="(max-width: 1024px)"
-                    srcset="img/hero_tablet.webp">
+        <picture>
+            <source
+                media="(max-width: 600px)"
+                srcset="img/hero_mobile.webp">
 
-                <img
-                    src="img/hero_desktop.webp"
-                    alt="Presentación de los servicios de belleza de GG Browns"
-                    class="hero-image">
-            </picture>
+            <source
+                media="(max-width: 1024px)"
+                srcset="img/hero_tablet.webp">
 
-            <div class="hero-overlay">
-                <div class="hero-content">
+            <img
+                src="img/hero_desktop.webp"
+                alt="Presentación de GG Browns Beauty Studio"
+                class="hero-image"
+                fetchpriority="high"
+                decoding="async">
+        </picture>
 
-                    <span class="subtitle">GG BROWNS BEAUTY STUDIO</span>
+        <div class="hero-overlay">
+            <div class="hero-content">
 
-                    <h1 id="titulo-principal">Resalta tu belleza natural</h1>
+                <span class="subtitle">GG BROWNS BEAUTY STUDIO</span>
 
-                    <p>
-                        Realza tu belleza con tratamientos especializados,
-                        atención personalizada y resultados que destacan
-                        lo mejor de ti.
-                    </p>
-
-                    <a href="#servicios" class="btn">
-                        Conoce nuestros servicios
-                    </a>
-
-                </div>
-            </div>
-
-        </section>
-
-        <!-- INTRODUCCIÓN -->
-        <section class="intro-section">
-            <div class="container">
-
-                <span class="subtitle">BIENVENIDA A GG BROWNS</span>
-
-                <h2>Tu belleza, nuestra pasión</h2>
+                <h1 id="titulo-principal">Resalta tu belleza natural</h1>
 
                 <p>
-                    En GG Browns creemos que cada persona tiene una belleza
-                    única. Nuestro objetivo es ayudarte a resaltarla mediante
-                    tratamientos especializados, dedicación y atención a cada
-                    detalle.
+                    Realza tu belleza con tratamientos especializados,
+                    atención personalizada y resultados que destacan
+                    lo mejor de ti.
                 </p>
 
-            </div>
-        </section>
-
-        <!-- NOSOTROS -->
-        <section id="nosotros" class="about-section">
-            <div class="container about-container">
-
-                <div class="about-image">
-                    <img
-                        src="img/Microblading_Tecnica.webp"
-                        alt="Trabajo de belleza y diseño de cejas">
-                </div>
-
-                <div class="about-content">
-
-                    <span class="subtitle">CONÓCENOS</span>
-
-                    <h2>Sobre GG Browns</h2>
-
-                    <p>
-                        Somos un espacio dedicado a la belleza y al cuidado
-                        personal. Nos especializamos en tratamientos que
-                        buscan realzar tus facciones y destacar tu belleza
-                        natural.
-                    </p>
-
-                    <p>
-                        Trabajamos con dedicación y atención personalizada
-                        para que cada visita sea una experiencia agradable
-                        y especial.
-                    </p>
-
-                    <a href="#contacto" class="btn">
-                        Agenda tu cita
-                    </a>
-
-                </div>
-
-            </div>
-        </section>
-
-        <!-- SERVICIOS -->
-        <section id="servicios" class="services-section">
-            <div class="container">
-
-                <div class="section-title">
-
-                    <span class="subtitle">NUESTROS TRATAMIENTOS</span>
-
-                    <h2>Servicios de belleza</h2>
-
-                    <p>
-                        Descubre nuestros tratamientos especializados
-                        para resaltar tu belleza.
-                    </p>
-
-                </div>
-
-                <div class="services-grid">
-
-                    <!-- SERVICIO 1 -->
-                    <article class="service-card">
-
-                        <img
-                            src="img/cejas.webp"
-                            alt="Diseño de cejas mediante Microblading y Nano Brows"
-                            loading="lazy">
-
-                        <div class="service-content">
-
-                            <h3>Microblading &amp; Nano Brows</h3>
-
-                            <p>
-                                Técnicas de diseño de cejas para conseguir
-                                una apariencia definida y armoniosa.
-                            </p>
-
-                            <a
-                                href="#contacto"
-                                class="service-link"
-                                data-service="Microblading & Nano Brows">
-                                Más información
-                            </a>
-
-                        </div>
-                    </article>
-
-                    <!-- SERVICIO 2 -->
-                    <article class="service-card">
-
-                        <img
-                            src="img/cejas-2.webp"
-                            alt="Servicios de micropigmentación y belleza"
-                            loading="lazy">
-
-                        <div class="service-content">
-
-                            <h3>Lip Blush &amp; Neutralización</h3>
-
-                            <p>
-                                Tratamiento enfocado en realzar el color
-                                y la apariencia natural de los labios.
-                            </p>
-
-                            <a
-                                href="#contacto"
-                                class="service-link"
-                                data-service="Lip Blush & Neutralización">
-                                Más información
-                            </a>
-
-                        </div>
-                    </article>
-
-                    <!-- SERVICIO 3 -->
-                    <article class="service-card">
-
-                        <img
-                            src="img/fibroblash.webp"
-                            alt="Tratamiento estético Plasma Fibroblast"
-                            loading="lazy">
-
-                        <div class="service-content">
-
-                            <h3>Plasma Fibroblast</h3>
-
-                            <p>
-                                Tratamiento estético especializado para
-                                el cuidado y mejoramiento de la apariencia
-                                de la piel.
-                            </p>
-
-                            <a
-                                href="#contacto"
-                                class="service-link"
-                                data-service="Plasma Fibroblast">
-                                Más información
-                            </a>
-
-                        </div>
-                    </article>
-
-                    <!-- SERVICIO 4 -->
-                    <article class="service-card">
-
-                        <img
-                            src="img/skin-tag.webp"
-                            alt="Servicio Skin Tag Removal"
-                            loading="lazy">
-
-                        <div class="service-content">
-
-                            <h3>Skin Tag Removal</h3>
-
-                            <p>
-                                Servicio especializado para la eliminación
-                                estética de pequeñas lesiones cutáneas,
-                                previa valoración profesional.
-                            </p>
-
-                            <a
-                                href="#contacto"
-                                class="service-link"
-                                data-service="Skin Tag Removal">
-                                Más información
-                            </a>
-
-                        </div>
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- GALERÍA DE VIDEOS -->
-        <section id="galeria" class="gallery-section">
-            <div class="container">
-
-                <div class="section-title">
-
-                    <span class="subtitle">CONOCE NUESTRO TRABAJO</span>
-
-                    <h2>Resultados que inspiran</h2>
-
-                    <p>
-                        Descubre algunos de nuestros tratamientos
-                        y técnicas de belleza.
-                    </p>
-
-                </div>
-
-                <div class="video-grid">
-
-                    <!-- VIDEO 1 -->
-                    <div class="video-card">
-
-                        <video
-                            controls
-                            playsinline
-                            preload="metadata"
-                            poster="img/cejas.webp"
-                            aria-label="Video de demostración del tratamiento Soft Ombre">
-
-                            <source
-                                src="img/soft%20ombre.mp4"
-                                type="video/mp4">
-
-                            Tu navegador no permite reproducir este video.
-
-                        </video>
-
-                        <h3>Soft Ombre</h3>
-
-                    </div>
-
-                    <!-- VIDEO 2 -->
-                    <div class="video-card">
-
-                        <video
-                            controls
-                            playsinline
-                            preload="metadata"
-                            poster="img/cejas-2.webp"
-                            aria-label="Video de demostración del tratamiento Microblading">
-
-                            <source
-                                src="img/video-microblading.mp4"
-                                type="video/mp4">
-
-                            Tu navegador no permite reproducir este video.
-
-                        </video>
-
-                        <h3>Microblading</h3>
-
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- OPINIONES -->
-        <section id="opiniones" class="reviews-section">
-            <div class="container">
-
-                <div class="section-title">
-
-                    <span class="subtitle">EXPERIENCIAS GG BROWNS</span>
-
-                    <h2>Opiniones de nuestras clientas</h2>
-
-                    <p>
-                        Nos encanta ser parte de tu experiencia de belleza.
-                    </p>
-
-                </div>
-
-                <div class="reviews-grid">
-
-                    <!-- OPINIÓN 1 -->
-                    <article class="review-card">
-
-                        <div class="review-stars" aria-label="5 de 5 estrellas">
-                            <span aria-hidden="true">★★★★★</span>
-                        </div>
-
-                        <p class="review-text">
-                            “¡Me encantó el resultado de mis cejas!
-                            Me realicé el servicio de Microblading y quedé
-                            fascinada. El diseño quedó muy natural, justo
-                            como lo quería. La atención fue excelente y me
-                            sentí muy cómoda durante todo el procedimiento.”
-                        </p>
-
-                        <div class="review-bottom">
-
-                            <div class="client-avatar" aria-hidden="true">
-                                M
-                            </div>
-
-                            <div class="review-client">
-                                <h3>María G.</h3>
-                                <span>Clienta de Microblading</span>
-                            </div>
-
-                        </div>
-
-                    </article>
-
-                    <!-- OPINIÓN 2 -->
-                    <article class="review-card">
-
-                        <div class="review-stars" aria-label="5 de 5 estrellas">
-                            <span aria-hidden="true">★★★★★</span>
-                        </div>
-
-                        <p class="review-text">
-                            “Una experiencia hermosa. Me hice el tratamiento
-                            de Nano Brows y estoy muy feliz con el resultado.
-                            Mis cejas se ven definidas y naturales. Se nota
-                            el cuidado y la dedicación en cada detalle.
-                            ¡Definitivamente volvería!”
-                        </p>
-
-                        <div class="review-bottom">
-
-                            <div class="client-avatar" aria-hidden="true">
-                                A
-                            </div>
-
-                            <div class="review-client">
-                                <h3>Andrea R.</h3>
-                                <span>Clienta de Nano Brows</span>
-                            </div>
-
-                        </div>
-
-                    </article>
-
-                    <!-- OPINIÓN 3 -->
-                    <article class="review-card">
-
-                        <div class="review-stars" aria-label="5 de 5 estrellas">
-                            <span aria-hidden="true">★★★★★</span>
-                        </div>
-
-                        <p class="review-text">
-                            “Excelente atención y resultados. Me explicaron
-                            el procedimiento con mucha paciencia y recibí
-                            una atención muy profesional. Me sentí segura
-                            y acompañada durante mi experiencia.
-                            ¡Muchas gracias!”
-                        </p>
-
-                        <div class="review-bottom">
-
-                            <div class="client-avatar" aria-hidden="true">
-                                C
-                            </div>
-
-                            <div class="review-client">
-                                <h3>Carolina M.</h3>
-                                <span>Clienta de Plasma Fibroblast</span>
-                            </div>
-
-                        </div>
-
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACTO -->
-        <section id="contacto" class="contact-section">
-            <div class="container">
-
-                <div class="section-title">
-
-                    <span class="subtitle">ESTAMOS PARA ATENDERTE</span>
-
-                    <h2>Agenda tu cita</h2>
-
-                    <p>
-                        Escríbenos y con gusto te brindaremos
-                        más información sobre nuestros servicios.
-                    </p>
-
-                </div>
-
-                <div class="contact-container">
-
-                    <div class="contact-info">
-
-                        <h3>Contáctanos</h3>
-
-                        <p>
-                            Estamos listas para ayudarte a elegir
-                            el tratamiento ideal para ti.
-                        </p>
-
-                        <p>
-                            <strong>WhatsApp:</strong>
-                            Escríbenos para consultar disponibilidad.
-                        </p>
-
-                        <p>
-                            <strong>Atención personalizada</strong>
-                        </p>
-
-                    </div>
-
-                    <!-- FORMULARIO -->
-                    <form id="contactForm" class="contact-form">
-
-                        <div class="form-group">
-
-                            <label for="nombre">Nombre completo</label>
-
-                            <input
-                                type="text"
-                                id="nombre"
-                                name="nombre"
-                                placeholder="Escribe tu nombre"
-                                autocomplete="name"
-                                required>
-
-                        </div>
-
-                        <div class="form-group">
-
-                            <label for="telefono">Número de teléfono</label>
-
-                            <input
-                                type="tel"
-                                id="telefono"
-                                name="telefono"
-                                placeholder="Tu número de teléfono"
-                                autocomplete="tel"
-                                required>
-
-                        </div>
-
-                        <div class="form-group">
-
-                            <label for="servicio">Servicio de interés</label>
-
-                            <select
-                                id="servicio"
-                                name="servicio"
-                                required>
-
-                                <option value="">
-                                    Selecciona un servicio
-                                </option>
-
-                                <option value="Microblading & Nano Brows">
-                                    Microblading &amp; Nano Brows
-                                </option>
-
-                                <option value="Lip Blush & Neutralización">
-                                    Lip Blush &amp; Neutralización
-                                </option>
-
-                                <option value="Plasma Fibroblast">
-                                    Plasma Fibroblast
-                                </option>
-
-                                <option value="Skin Tag Removal">
-                                    Skin Tag Removal
-                                </option>
-
-                            </select>
-
-                        </div>
-
-                        <div class="form-group">
-
-                            <label for="mensaje">Mensaje</label>
-
-                            <textarea
-                                id="mensaje"
-                                name="mensaje"
-                                rows="5"
-                                placeholder="Cuéntanos cómo podemos ayudarte"></textarea>
-
-                        </div>
-
-                        <button type="submit" class="btn">
-                            Enviar por WhatsApp
-                        </button>
-
-                    </form>
-
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- PIE DE PÁGINA -->
-    <footer class="footer">
-
-        <div class="container footer-container">
-
-            <div class="footer-logo">
-
-                <img
-                    src="img/logo.webp"
-                    alt="Logo de GG Browns">
-
-                <p>
-                    Resaltamos tu belleza natural.
-                </p>
-
-            </div>
-
-            <div class="footer-links">
-
-                <h3>Enlaces rápidos</h3>
-
-                <a href="#inicio">Inicio</a>
-                <a href="#nosotros">Nosotros</a>
-                <a href="#servicios">Servicios</a>
-                <a href="#galeria">Galería</a>
-                <a href="#opiniones">Opiniones</a>
-                <a href="#contacto">Contacto</a>
-
-            </div>
-
-            <div class="footer-contact">
-
-                <h3>Contáctanos</h3>
-
-                <p>
-                    Agenda tu cita y conoce nuestros servicios.
-                </p>
-
-                <a href="#contacto" class="footer-button">
-                    Solicitar información
+                <a href="#servicios" class="btn">
+                    Conoce nuestros servicios
                 </a>
 
             </div>
-
         </div>
+    </section>
 
-        <div class="footer-bottom">
+    <!-- INTRODUCCIÓN -->
+    <section class="intro-section">
+        <div class="container">
+
+            <span class="subtitle">BIENVENIDA A GG BROWNS</span>
+
+            <h2>Tu belleza, nuestra pasión</h2>
 
             <p>
-                &copy; <span id="currentYear"></span>
-                GG Browns. Todos los derechos reservados.
+                En GG Browns creemos que cada persona tiene una belleza
+                única. Nuestro objetivo es ayudarte a resaltarla mediante
+                tratamientos especializados, dedicación y atención a cada
+                detalle.
             </p>
 
         </div>
+    </section>
 
-    </footer>
+    <!-- NOSOTROS -->
+    <section id="nosotros" class="about-section">
+        <div class="container about-container">
+
+            <div class="about-image">
+                <img
+                    src="img/Microblading_Tecnica.webp"
+                    alt="Especialista realizando un tratamiento de diseño de cejas"
+                    loading="lazy"
+                    decoding="async">
+            </div>
+
+            <div class="about-content">
+
+                <span class="subtitle">CONÓCENOS</span>
+
+                <h2>Sobre GG Browns</h2>
+
+                <p>
+                    Somos un espacio dedicado a la belleza y al cuidado
+                    personal. Nos especializamos en tratamientos que
+                    buscan realzar tus facciones y destacar tu belleza
+                    natural.
+                </p>
+
+                <p>
+                    Trabajamos con dedicación y atención personalizada
+                    para que cada visita sea una experiencia agradable
+                    y especial.
+                </p>
+
+                <a href="#contacto" class="btn">Agenda tu cita</a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="services-section">
+        <div class="container">
+
+            <div class="section-title">
+                <span class="subtitle">NUESTROS TRATAMIENTOS</span>
+                <h2>Servicios de belleza</h2>
+                <p>
+                    Descubre nuestros tratamientos especializados
+                    para resaltar tu belleza.
+                </p>
+            </div>
+
+            <div class="services-grid">
+
+                <article class="service-card">
+                    <img
+                        src="img/cejas.webp"
+                        alt="Diseño de cejas mediante Microblading y Nano Brows"
+                        loading="lazy"
+                        decoding="async">
+
+                    <div class="service-content">
+                        <h3>Microblading &amp; Nano Brows</h3>
+                        <p>
+                            Técnicas de diseño de cejas para conseguir
+                            una apariencia definida y armoniosa.
+                        </p>
+                        <a href="#contacto"
+                           class="service-link"
+                           data-service="Microblading & Nano Brows">
+                            Más información
+                        </a>
+                    </div>
+                </article>
+
+                <article class="service-card">
+                    <img
+                        src="img/cejas-2.webp"
+                        alt="Trabajo de micropigmentación y belleza"
+                        loading="lazy"
+                        decoding="async">
+
+                    <div class="service-content">
+                        <h3>Lip Blush &amp; Neutralización</h3>
+                        <p>
+                            Tratamiento enfocado en realzar el color
+                            y la apariencia natural de los labios.
+                        </p>
+                        <a href="#contacto"
+                           class="service-link"
+                           data-service="Lip Blush & Neutralización">
+                            Más información
+                        </a>
+                    </div>
+                </article>
+
+                <article class="service-card">
+                    <img
+                        src="img/fibroblash.webp"
+                        alt="Tratamiento estético Plasma Fibroblast"
+                        loading="lazy"
+                        decoding="async">
+
+                    <div class="service-content">
+                        <h3>Plasma Fibroblast</h3>
+                        <p>
+                            Tratamiento estético especializado para
+                            el cuidado y mejoramiento de la apariencia
+                            de la piel.
+                        </p>
+                        <a href="#contacto"
+                           class="service-link"
+                           data-service="Plasma Fibroblast">
+                            Más información
+                        </a>
+                    </div>
+                </article>
+
+                <article class="service-card">
+                    <img
+                        src="img/skin-tag.webp"
+                        alt="Servicio estético Skin Tag Removal"
+                        loading="lazy"
+                        decoding="async">
+
+                    <div class="service-content">
+                        <h3>Skin Tag Removal</h3>
+                        <p>
+                            Servicio especializado para la eliminación
+                            estética de pequeñas lesiones cutáneas,
+                            previa valoración profesional.
+                        </p>
+                        <a href="#contacto"
+                           class="service-link"
+                           data-service="Skin Tag Removal">
+                            Más información
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA DE VIDEOS -->
+    <section id="galeria" class="gallery-section">
+        <div class="container">
+
+            <div class="section-title">
+                <span class="subtitle">CONOCE NUESTRO TRABAJO</span>
+                <h2>Resultados que inspiran</h2>
+                <p>
+                    Descubre algunos de nuestros tratamientos
+                    y técnicas de belleza.
+                </p>
+            </div>
+
+            <div class="video-grid">
+
+                <article class="video-card">
+                    <video
+                        controls
+                        playsinline
+                        preload="none"
+                        poster="img/cejas.webp"
+                        aria-label="Demostración del tratamiento Soft Ombre">
+
+                        <source src="img/soft%20ombre.mp4" type="video/mp4">
+
+                        Tu navegador no permite reproducir este video.
+                    </video>
+
+                    <h3>Soft Ombre</h3>
+                </article>
+
+                <article class="video-card">
+                    <video
+                        controls
+                        playsinline
+                        preload="none"
+                        poster="img/cejas-2.webp"
+                        aria-label="Demostración del tratamiento Microblading">
+
+                        <source src="img/video-microblading.mp4" type="video/mp4">
+
+                        Tu navegador no permite reproducir este video.
+                    </video>
+
+                    <h3>Microblading</h3>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- OPINIONES -->
+    <section id="opiniones" class="reviews-section">
+        <div class="container">
+
+            <div class="section-title">
+                <span class="subtitle">EXPERIENCIAS GG BROWNS</span>
+                <h2>Opiniones de nuestras clientas</h2>
+                <p>
+                    Nos encanta ser parte de tu experiencia de belleza.
+                </p>
+            </div>
+
+            <div class="reviews-grid">
+
+                <article class="review-card">
+
+                    <div class="review-stars">
+                        <span class="visually-hidden">Calificación: 5 de 5 estrellas.</span>
+                        <span aria-hidden="true">★★★★★</span>
+                    </div>
+
+                    <p class="review-text">
+                        “¡Me encantó el resultado de mis cejas!
+                        Me realicé el servicio de Microblading y quedé
+                        fascinada. El diseño quedó muy natural, justo
+                        como lo quería. La atención fue excelente y me
+                        sentí muy cómoda durante todo el procedimiento.”
+                    </p>
+
+                    <div class="review-bottom">
+                        <div class="client-avatar" aria-hidden="true">M</div>
+                        <div class="review-client">
+                            <h3>María G.</h3>
+                            <span>Clienta de Microblading</span>
+                        </div>
+                    </div>
+
+                </article>
+
+                <article class="review-card">
+
+                    <div class="review-stars">
+                        <span class="visually-hidden">Calificación: 5 de 5 estrellas.</span>
+                        <span aria-hidden="true">★★★★★</span>
+                    </div>
+
+                    <p class="review-text">
+                        “Una experiencia hermosa. Me hice el tratamiento
+                        de Nano Brows y estoy muy feliz con el resultado.
+                        Mis cejas se ven definidas y naturales. Se nota
+                        el cuidado y la dedicación en cada detalle.
+                        ¡Definitivamente volvería!”
+                    </p>
+
+                    <div class="review-bottom">
+                        <div class="client-avatar" aria-hidden="true">A</div>
+                        <div class="review-client">
+                            <h3>Andrea R.</h3>
+                            <span>Clienta de Nano Brows</span>
+                        </div>
+                    </div>
+
+                </article>
+
+                <article class="review-card">
+
+                    <div class="review-stars">
+                        <span class="visually-hidden">Calificación: 5 de 5 estrellas.</span>
+                        <span aria-hidden="true">★★★★★</span>
+                    </div>
+
+                    <p class="review-text">
+                        “Excelente atención y resultados. Me explicaron
+                        el procedimiento con mucha paciencia y recibí
+                        una atención muy profesional. Me sentí segura
+                        y acompañada durante mi experiencia.
+                        ¡Muchas gracias!”
+                    </p>
+
+                    <div class="review-bottom">
+                        <div class="client-avatar" aria-hidden="true">C</div>
+                        <div class="review-client">
+                            <h3>Carolina M.</h3>
+                            <span>Clienta de Plasma Fibroblast</span>
+                        </div>
+                    </div>
+
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="contact-section">
+        <div class="container">
+
+            <div class="section-title">
+                <span class="subtitle">ESTAMOS PARA ATENDERTE</span>
+                <h2>Agenda tu cita</h2>
+                <p>
+                    Escríbenos y con gusto te brindaremos
+                    más información sobre nuestros servicios.
+                </p>
+            </div>
+
+            <div class="contact-container">
+
+                <div class="contact-info">
+                    <h3>Contáctanos</h3>
+                    <p>
+                        Estamos listas para ayudarte a elegir
+                        el tratamiento ideal para ti.
+                    </p>
+                    <p>
+                        <strong>WhatsApp:</strong>
+                        Escríbenos para consultar disponibilidad.
+                    </p>
+                    <p><strong>Atención personalizada</strong></p>
+                </div>
+
+                <form id="contactForm" class="contact-form">
+
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input
+                            type="text"
+                            id="nombre"
+                            name="nombre"
+                            placeholder="Escribe tu nombre"
+                            autocomplete="name"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Número de teléfono</label>
+                        <input
+                            type="tel"
+                            id="telefono"
+                            name="telefono"
+                            placeholder="Tu número de teléfono"
+                            autocomplete="tel"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="servicio">Servicio de interés</label>
+                        <select id="servicio" name="servicio" required>
+                            <option value="">Selecciona un servicio</option>
+                            <option value="Microblading & Nano Brows">Microblading &amp; Nano Brows</option>
+                            <option value="Lip Blush & Neutralización">Lip Blush &amp; Neutralización</option>
+                            <option value="Plasma Fibroblast">Plasma Fibroblast</option>
+                            <option value="Skin Tag Removal">Skin Tag Removal</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea
+                            id="mensaje"
+                            name="mensaje"
+                            rows="5"
+                            placeholder="Cuéntanos cómo podemos ayudarte"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">
+                        Enviar por WhatsApp
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- PIE DE PÁGINA -->
+<footer class="footer">
+    <div class="container footer-container">
+
+        <div class="footer-logo">
+            <img
+                src="img/logo.webp"
+                alt="GG Browns Beauty Studio"
+                width="150"
+                height="100"
+                loading="lazy"
+                decoding="async">
+
+            <p>Resaltamos tu belleza natural.</p>
+        </div>
+
+        <nav class="footer-links" aria-label="Enlaces del pie de página">
+            <h3>Enlaces rápidos</h3>
+            <a href="#inicio">Inicio</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#galeria">Galería</a>
+            <a href="#opiniones">Opiniones</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
+        <div class="footer-contact">
+            <h3>Contáctanos</h3>
+            <p>Agenda tu cita y conoce nuestros servicios.</p>
+            <a href="#contacto" class="footer-button">
+                Solicitar información
+            </a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>
+            &copy; <span id="currentYear"></span>
+            GG Browns. Todos los derechos reservados.
+        </p>
+    </div>
+</footer>
 
 </body>
 </html>

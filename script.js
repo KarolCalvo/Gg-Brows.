@@ -1,231 +1,147 @@
-
 document.addEventListener("DOMContentLoaded", () => {
 
-    // =========================================
-    // MENÚ MÓVIL ACCESIBLE
-    // =========================================
+    // ==============================
+    // MENÚ MÓVIL
+    // ==============================
 
     const menuToggle = document.getElementById("menuToggle");
     const mainNav = document.getElementById("mainNav");
+    const menuIcon = menuToggle ? menuToggle.querySelector("span") : null;
+
+    function cerrarMenu() {
+        if (!menuToggle || !mainNav) return;
+
+        menuToggle.classList.remove("active");
+        mainNav.classList.remove("active");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Abrir menú");
+
+        if (menuIcon) {
+            menuIcon.textContent = "☰";
+        }
+    }
+
+    function abrirMenu() {
+        if (!menuToggle || !mainNav) return;
+
+        menuToggle.classList.add("active");
+        mainNav.classList.add("active");
+
+        menuToggle.setAttribute("aria-expanded", "true");
+        menuToggle.setAttribute("aria-label", "Cerrar menú");
+
+        if (menuIcon) {
+            menuIcon.textContent = "×";
+        }
+    }
 
     if (menuToggle && mainNav) {
-
-        const closeMenu = () => {
-            mainNav.classList.remove("active");
-
-            menuToggle.setAttribute("aria-expanded", "false");
-            menuToggle.setAttribute("aria-label", "Abrir menú");
-        };
-
-        const openMenu = () => {
-            mainNav.classList.add("active");
-
-            menuToggle.setAttribute("aria-expanded", "true");
-            menuToggle.setAttribute("aria-label", "Cerrar menú");
-        };
-
         menuToggle.addEventListener("click", () => {
-
-            const isOpen =
-                menuToggle.getAttribute("aria-expanded") === "true";
-
-            if (isOpen) {
-                closeMenu();
+            const menuAbierto = mainNav.classList.contains("active");
+            if (menuAbierto) {
+                cerrarMenu();
             } else {
-                openMenu();
+                abrirMenu();
             }
-
         });
 
-        // Cerrar al seleccionar una sección
-        mainNav.querySelectorAll("a").forEach(link => {
-
-            link.addEventListener("click", closeMenu);
-
+        // Cerrar al seleccionar un enlace
+        mainNav.querySelectorAll("a").forEach((enlace) => {
+            enlace.addEventListener("click", cerrarMenu);
         });
 
         // Cerrar con Escape
-        document.addEventListener("keydown", event => {
-
-            if (event.key === "Escape") {
-                closeMenu();
+        document.addEventListener("keydown", (evento) => {
+            if (evento.key === "Escape" && mainNav.classList.contains("active")) {
+                cerrarMenu();
                 menuToggle.focus();
             }
-
         });
 
-        // Cerrar si se hace clic fuera del menú
-        document.addEventListener("click", event => {
-
-            const isOpen =
-                menuToggle.getAttribute("aria-expanded") === "true";
-
-            if (
-                isOpen &&
-                !mainNav.contains(event.target) &&
-                !menuToggle.contains(event.target)
-            ) {
-                closeMenu();
+        // Cerrar al cambiar a pantalla grande (Estándar moderno optimizado)
+        const pantallaGrande = window.matchMedia("(min-width: 769px)");
+        pantallaGrande.addEventListener("change", (evento) => {
+            if (evento.matches) {
+                cerrarMenu();
             }
-
         });
-
-        // Al regresar a escritorio, restablecer el menú
-        window.addEventListener("resize", () => {
-
-            if (window.innerWidth > 768) {
-                closeMenu();
-            }
-
-        });
-
     }
 
-
-    // =========================================
-    // AÑO AUTOMÁTICO
-    // =========================================
-
-    const year = document.getElementById("currentYear");
-
-    if (year) {
-        year.textContent = new Date().getFullYear();
-    }
-
-
-    // =========================================
+    // ==============================
     // SELECCIONAR SERVICIO AUTOMÁTICAMENTE
-    // =========================================
+    // ==============================
 
-    const serviceSelect = document.getElementById("servicio");
+    const servicioSelect = document.getElementById("servicio");
 
-    document.querySelectorAll("[data-service]").forEach(link => {
-
-        link.addEventListener("click", () => {
-
-            if (!serviceSelect) return;
-
-            const wanted = link.dataset.service;
-
-            const option = [...serviceSelect.options].find(item => {
-
-                return (
-                    item.value.trim() === wanted ||
-                    item.textContent.trim() === wanted
-                );
-
-            });
-
-            if (option) {
-                serviceSelect.value = option.value;
+    document.querySelectorAll("[data-service]").forEach((enlace) => {
+        enlace.addEventListener("click", () => {
+            const servicio = enlace.getAttribute("data-service");
+            if (servicioSelect && servicio) {
+                servicioSelect.value = servicio;
             }
-
         });
-
     });
 
+    // ==============================
+    // FORMULARIO DE WHATSAPP
+    // ==============================
 
-    // =========================================
-    // CONFIGURACIÓN DE WHATSAPP
-    // =========================================
+    const contactForm = document.getElementById("contactForm");
+    const numeroWhatsApp = "506XXXXXXXX"; // Reemplaza con tu número real
 
-    // Escribe aquí tu número real.
-    // Ejemplo: 50688888888
-    // Sin espacios, guiones ni signo +
+    if (contactForm) {
+        contactForm.addEventListener("submit", (evento) => {
+            evento.preventDefault();
 
-    const WHATSAPP_NUMBER = "TU_NUMERO_AQUI";
-
-
-    // =========================================
-    // ENLACE DIRECTO A WHATSAPP
-    // =========================================
-
-    const whatsappLink = document.getElementById("whatsappLink");
-
-    if (whatsappLink) {
-
-        if (WHATSAPP_NUMBER !== "TU_NUMERO_AQUI") {
-
-            whatsappLink.href =
-                `https://wa.me/${WHATSAPP_NUMBER}`;
-
-            whatsappLink.target = "_blank";
-            whatsappLink.rel = "noopener noreferrer";
-
-        } else {
-
-            whatsappLink.href = "#contacto";
-
-        }
-
-    }
-
-
-    // =========================================
-    // FORMULARIO DE CONTACTO
-    // =========================================
-
-    const form = document.getElementById("contactForm");
-
-    if (form) {
-
-        form.addEventListener("submit", event => {
-
-            event.preventDefault();
-
-            // Validar los campos obligatorios
-            if (!form.reportValidity()) {
+            if (!contactForm.reportValidity()) {
                 return;
             }
 
-            // Verificar número de WhatsApp
+            const nombre = document.getElementById("nombre")?.value.trim() || "";
+            const telefono = document.getElementById("telefono")?.value.trim() || "";
+            const servicio = document.getElementById("servicio")?.value || "";
+            const mensaje = document.getElementById("mensaje")?.value.trim() || "";
+
+            if (!nombre || !telefono || !servicio) {
+                alert("Por favor, completa los campos obligatorios.");
+                return;
+            }
+
+            const numeroLimpio = numeroWhatsApp.replace(/\D/g, "");
+
             if (
-                WHATSAPP_NUMBER === "TU_NUMERO_AQUI" ||
-                !/^\d{8,15}$/.test(WHATSAPP_NUMBER)
+                numeroWhatsApp.includes("X") ||
+                numeroLimpio.length < 8 ||
+                numeroLimpio.length > 15
             ) {
-
-                alert(
-                    "Configura tu número de WhatsApp en el archivo script.js."
-                );
-
+                alert("Configura el número real de WhatsApp en el archivo script.js.");
                 return;
-
             }
 
-            const data = new FormData(form);
+            const texto = `Hola, GG Browns Beauty Studio.\n\nMi nombre es: ${nombre}\nMi teléfono: ${telefono}\nServicio de interés: ${servicio}\n\nMensaje: ${mensaje || "Me gustaría obtener más información."}`;
 
-            const nombre = data.get("nombre");
-            const telefono = data.get("telefono");
-            const servicio = data.get("servicio");
-            const mensajeUsuario = data.get("mensaje");
+            const url = `https://wa.me/${numeroLimpio}?text=${encodeURIComponent(texto)}`;
 
-            const message = [
-
-                "Hola, deseo solicitar información en GG Browns.",
-
-                `Nombre: ${nombre}`,
-
-                `Teléfono: ${telefono}`,
-
-                `Tratamiento: ${servicio}`,
-
-                `Mensaje: ${mensajeUsuario || "Sin comentarios"}`
-
-            ].join("\n");
-
-            const url =
-                `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-
-            // Abrir WhatsApp
-            window.open(
+            const nuevaVentana = window.open(
                 url,
                 "_blank",
                 "noopener,noreferrer"
             );
 
+            if (!nuevaVentana) {
+                window.location.href = url;
+            }
         });
+    }
 
+    // ==============================
+    // AÑO AUTOMÁTICO DEL FOOTER
+    // ==============================
+
+    const currentYear = document.getElementById("currentYear");
+    if (currentYear) {
+        currentYear.textContent = new Date().getFullYear();
     }
 
 });
-

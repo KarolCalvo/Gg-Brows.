@@ -1,13 +1,7 @@
-
 /* =========================================
-   GG BROWNS - DISEÑO PROFESIONAL Y ACCESIBLE
-   Colores: rosa, crema, blanco y dorado
+   GG BROWNS - CSS PROFESIONAL Y ACCESIBLE
    ========================================= */
 
-/* FUENTES */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
-
-/* VARIABLES */
 :root {
     --color-fondo: #FBF0EE;
     --color-crema: #FAF7F3;
@@ -19,15 +13,16 @@
     --color-dorado-claro: #E2C08D;
     --color-oscuro: #292321;
 
-    --fuente-titulo: "Playfair Display", serif;
-    --fuente-texto: "DM Sans", sans-serif;
+    --fuente-titulo: "Playfair Display", Georgia, serif;
+    --fuente-texto: "DM Sans", Arial, sans-serif;
 
     --sombra: 0 10px 35px rgba(51,45,45,.08);
     --radio: 16px;
-    --transicion: all .3s ease;
+    --transicion: .3s ease;
 }
 
-/* CONFIGURACIÓN GENERAL */
+/* RESET */
+
 * {
     margin: 0;
     padding: 0;
@@ -36,7 +31,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 100px;
+    scroll-padding-top: 105px;
 }
 
 body {
@@ -47,17 +42,21 @@ body {
     overflow-x: hidden;
 }
 
-img, video {
+img,
+video {
     display: block;
     max-width: 100%;
 }
 
 a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
 }
 
-button, input, textarea, select {
+button,
+input,
+textarea,
+select {
     font: inherit;
 }
 
@@ -74,7 +73,9 @@ section {
     padding: 95px 0;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: var(--fuente-titulo);
     font-weight: 500;
     line-height: 1.2;
@@ -90,15 +91,12 @@ p {
     color: var(--color-secundario);
 }
 
-/* SELECCIÓN DE TEXTO */
 ::selection {
     background: var(--color-dorado-claro);
     color: var(--color-texto);
 }
 
-/* =========================================
-   ACCESIBILIDAD
-   ========================================= */
+/* ACCESIBILIDAD */
 
 .skip-link {
     position: absolute;
@@ -110,22 +108,39 @@ p {
     color: var(--color-blanco);
     border-radius: 4px;
     transform: translateY(-160%);
-    transition: transform .2s ease;
 }
 
 .skip-link:focus {
     transform: translateY(0);
 }
 
-/* Foco visible para teclado */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 :focus-visible {
     outline: 3px solid var(--color-dorado-texto);
     outline-offset: 4px;
 }
 
-/* =========================================
-   TÍTULOS DE SECCIONES
-   ========================================= */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--color-dorado-texto);
+    outline-offset: 4px;
+}
+
+/* TÍTULOS */
 
 .subtitle {
     display: inline-block;
@@ -148,9 +163,7 @@ p {
     margin: 0 auto;
 }
 
-/* =========================================
-   BOTONES
-   ========================================= */
+/* BOTONES */
 
 .btn {
     display: inline-flex;
@@ -160,11 +173,12 @@ p {
     border-radius: 4px;
     font-size: 13px;
     font-weight: 700;
-    transition: var(--transicion);
-    cursor: pointer;
     background: var(--color-dorado);
-    color: var(--color-texto);
+    color: #292321;
     border: 1px solid var(--color-dorado);
+    transition: background var(--transicion),
+                color var(--transicion),
+                transform var(--transicion);
 }
 
 .btn:hover {
@@ -174,16 +188,14 @@ p {
     transform: translateY(-3px);
 }
 
-/* =========================================
-   ENCABEZADO Y MENÚ
-   ========================================= */
+/* ENCABEZADO */
 
 .header {
     position: sticky;
     top: 0;
     z-index: 1000;
     width: 100%;
-    background: rgba(255,255,255,.97);
+    background: rgba(255,255,255,.98);
     box-shadow: 0 3px 20px rgba(0,0,0,.04);
 }
 
@@ -203,7 +215,8 @@ p {
 
 .logo img {
     width: 145px;
-    max-height: 72px;
+    height: auto;
+    aspect-ratio: 800 / 533;
     object-fit: contain;
 }
 
@@ -218,7 +231,7 @@ p {
     font-size: 13px;
     font-weight: 600;
     color: var(--color-texto);
-    transition: color .3s ease;
+    transition: color var(--transicion);
 }
 
 .main-nav a::after {
@@ -229,7 +242,7 @@ p {
     left: 0;
     bottom: -5px;
     background: var(--color-dorado-texto);
-    transition: width .3s ease;
+    transition: width var(--transicion);
 }
 
 .main-nav a:hover {
@@ -249,9 +262,7 @@ p {
     font-size: 28px;
 }
 
-/* =========================================
-   PORTADA / HERO
-   ========================================= */
+/* HERO */
 
 .hero {
     position: relative;
@@ -298,7 +309,6 @@ p {
     z-index: 2;
     width: min(1160px, 90%);
     margin: 0 auto;
-    color: var(--color-blanco);
     padding-top: 30px;
 }
 
@@ -320,9 +330,7 @@ p {
     margin-bottom: 32px;
 }
 
-/* =========================================
-   INTRODUCCIÓN
-   ========================================= */
+/* INTRODUCCIÓN */
 
 .intro-section {
     background: var(--color-crema);
@@ -339,9 +347,7 @@ p {
     margin: 0 auto;
 }
 
-/* =========================================
-   NOSOTROS
-   ========================================= */
+/* NOSOTROS */
 
 .about-section {
     background: var(--color-blanco);
@@ -380,9 +386,7 @@ p {
     margin-top: 15px;
 }
 
-/* =========================================
-   SERVICIOS
-   ========================================= */
+/* SERVICIOS */
 
 .services-section {
     background: var(--color-crema);
@@ -390,18 +394,20 @@ p {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 22px;
 }
 
 .service-card {
     display: flex;
     flex-direction: column;
+    min-width: 0;
     background: var(--color-blanco);
     border-radius: var(--radio);
     overflow: hidden;
     box-shadow: var(--sombra);
-    transition: transform .35s ease, box-shadow .35s ease;
+    transition: transform var(--transicion),
+                box-shadow var(--transicion);
 }
 
 .service-card:hover {
@@ -411,13 +417,8 @@ p {
 
 .service-card > img {
     width: 100%;
-    height: 250px;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
-    transition: transform .5s ease;
-}
-
-.service-card:hover > img {
-    transform: scale(1.04);
 }
 
 .service-content {
@@ -444,7 +445,6 @@ p {
     font-size: 13px;
     font-weight: 700;
     color: var(--color-dorado-texto);
-    transition: color .3s ease;
     text-decoration: underline;
     text-underline-offset: 4px;
 }
@@ -453,9 +453,7 @@ p {
     color: var(--color-oscuro);
 }
 
-/* =========================================
-   GALERÍA DE VIDEOS
-   ========================================= */
+/* GALERÍA DE VIDEOS */
 
 .gallery-section {
     background: var(--color-blanco);
@@ -474,12 +472,11 @@ p {
     border-radius: var(--radio);
     overflow: hidden;
     box-shadow: var(--sombra);
-    transition: transform .35s ease, box-shadow .35s ease;
+    transition: transform var(--transicion);
 }
 
 .video-card:hover {
     transform: translateY(-7px);
-    box-shadow: 0 18px 40px rgba(51,45,45,.13);
 }
 
 .video-card video {
@@ -495,9 +492,7 @@ p {
     padding: 22px 25px;
 }
 
-/* =========================================
-   OPINIONES DE CLIENTAS
-   ========================================= */
+/* OPINIONES */
 
 .reviews-section {
     background: var(--color-fondo);
@@ -506,12 +501,13 @@ p {
 
 .reviews-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 25px;
     align-items: stretch;
 }
 
 .review-card {
+    min-width: 0;
     background: var(--color-blanco);
     padding: 35px 28px;
     border-radius: var(--radio);
@@ -519,13 +515,12 @@ p {
     text-align: left;
     display: flex;
     flex-direction: column;
-    transition: var(--transicion);
+    transition: transform var(--transicion);
     border: 1px solid rgba(199,164,106,.15);
 }
 
 .review-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 18px 40px rgba(51,45,45,.12);
 }
 
 .review-stars {
@@ -548,7 +543,7 @@ p {
     display: flex;
     align-items: center;
     gap: 14px;
-    border-top: 1px solid #eee5df;
+    border-top: 1px solid #EEE5DF;
     padding-top: 20px;
 }
 
@@ -579,9 +574,7 @@ p {
     font-size: 12px;
 }
 
-/* =========================================
-   CONTACTO
-   ========================================= */
+/* CONTACTO */
 
 .contact-section {
     background: var(--color-crema);
@@ -631,13 +624,14 @@ p {
 .contact-form textarea {
     display: block;
     width: 100%;
+    min-height: 46px;
     padding: 13px 15px;
     border: 1px solid #8A7D76;
     border-radius: 5px;
     background: #FFFEFD;
     color: var(--color-texto);
-    outline: none;
-    transition: border .3s ease, box-shadow .3s ease;
+    transition: border var(--transicion),
+                box-shadow var(--transicion);
 }
 
 .contact-form input::placeholder,
@@ -651,6 +645,7 @@ p {
 .contact-form textarea:focus {
     border-color: var(--color-dorado-texto);
     box-shadow: 0 0 0 3px rgba(118,82,31,.18);
+    outline: none;
 }
 
 .contact-form textarea {
@@ -663,9 +658,7 @@ p {
     width: 100%;
 }
 
-/* =========================================
-   PIE DE PÁGINA
-   ========================================= */
+/* FOOTER */
 
 .footer {
     background: var(--color-oscuro);
@@ -682,7 +675,8 @@ p {
 
 .footer-logo img {
     width: 150px;
-    max-height: 75px;
+    height: auto;
+    aspect-ratio: 800 / 533;
     object-fit: contain;
     margin-bottom: 18px;
 }
@@ -709,7 +703,6 @@ p {
 .footer-links a {
     font-size: 13px;
     color: var(--color-blanco);
-    transition: color .3s;
 }
 
 .footer-links a:hover {
@@ -729,7 +722,6 @@ p {
     border-radius: 4px;
     font-size: 13px;
     font-weight: 700;
-    transition: var(--transicion);
 }
 
 .footer-button:hover {
@@ -748,9 +740,7 @@ p {
     font-size: 12px;
 }
 
-/* =========================================
-   TABLETS
-   ========================================= */
+/* TABLETS */
 
 @media (max-width: 1024px) {
 
@@ -763,7 +753,7 @@ p {
     }
 
     .services-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .about-container {
@@ -779,7 +769,7 @@ p {
     }
 
     .reviews-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .review-card:last-child {
@@ -787,11 +777,13 @@ p {
     }
 }
 
-/* =========================================
-   CELULARES Y TABLETS PEQUEÑAS
-   ========================================= */
+/* CELULARES Y TABLETS PEQUEÑAS */
 
 @media (max-width: 768px) {
+
+    html {
+        scroll-padding-top: 85px;
+    }
 
     section {
         padding: 70px 0;
@@ -824,7 +816,9 @@ p {
         opacity: 0;
         visibility: hidden;
         transform: translateY(-10px);
-        transition: var(--transicion);
+        transition: opacity var(--transicion),
+                    visibility var(--transicion),
+                    transform var(--transicion);
         pointer-events: none;
     }
 
@@ -917,9 +911,7 @@ p {
     }
 }
 
-/* =========================================
-   CELULARES PEQUEÑOS
-   ========================================= */
+/* CELULARES PEQUEÑOS */
 
 @media (max-width: 480px) {
 
@@ -948,14 +940,6 @@ p {
         grid-template-columns: 1fr;
     }
 
-    .service-card > img {
-        height: 270px;
-    }
-
-    .about-image {
-        height: 320px;
-    }
-
     .review-card {
         padding: 28px 22px;
     }
@@ -970,18 +954,41 @@ p {
     }
 }
 
-/* =========================================
-   MOVIMIENTO REDUCIDO
-   ========================================= */
+/* REDUCCIÓN DE MOVIMIENTO */
 
 @media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
 
     *,
     *::before,
     *::after {
-        scroll-behavior: auto !important;
         animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: .01ms !important;
     }
+}
+
+/* ESTABILIDAD VISUAL Y CARGA */
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-card > img {
+    aspect-ratio: 4 / 3;
+}
+
+.video-card video {
+    aspect-ratio: 16 / 10;
+}
+
+.logo img,
+.footer-logo img {
+    display: block;
+    height: auto;
 }
